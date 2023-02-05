@@ -2,20 +2,20 @@
 
 ; Exercise 1.1
 
-10                           ; will return 10
-(+ 5 3 4)                    ; will return 12
-(- 9 1)                      ; will return 8
-(/ 6 2)                      ; will return 3
-(+ (* 2 4) (- 4 6))          ; will return 6
+10                                    ; will return 10
+(+ 5 3 4)                             ; will return 12
+(- 9 1)                               ; will return 8
+(/ 6 2)                               ; will return 3
+(+ (* 2 4) (- 4 6))                   ; will return 6
 
-(define a 3)                 ; a = 3
-(define b (+ a 1))           ; b = 4
-(+ a b (* a b))              ; will return 19
-(= a b)                      ; will return 'false' (#f)
+(define a 3)                          ; a = 3
+(define b (+ a 1))                    ; b = 4
+(+ a b (* a b))                       ; will return 19
+(= a b)                               ; will return 'false' (#f)
 
 (if (and (> b a) (< b (* a b)))       ; check if b > a AND b < (a * b)
-    b                                 ; will return 4
-    a)
+    b                                 ; if 'true' return 'b', if 'false' return a
+    a)                                ; will return 4
 
 (cond ((= a 4) 6)                     ; check if a = 4 
       ((= b 4) (+ 6 7 a))             ; check if b = 4, then calculate (6 + 7 + a)
@@ -37,13 +37,13 @@
 
 (define (square x) (* x x))
 
-(define SumOfSquares(x y)
+(define (SumOfSquares x y)
   (+ (square x) (square y)))
 
 (define (SumOfLargest x y z)
-  (cond ((and (<= x y) (<= x z)) (SumOfSquares(y z))
-        ((and (<= y x) (<= y z)) (SumOfSquares(x z))
-        (else (SumOfSquares(x y)))))))
+  (cond ((and (<= x y) (<= x z)) (SumOfSquares y z))
+        ((and (<= y x) (<= y z)) (SumOfSquares x z))
+        (else (SumOfSquares x y))))
 
 ; Exercise 1.4
 
@@ -54,46 +54,7 @@
 ;; the 'if' statement checks to see if b > 0
 ;; if b > 0 is true, it will return +, otherwise -
 ;; assuming + is returned, it will then add a + b
+;; assuming - is returned it will then subtract a - b
 
 
 ; Exercise 1.5
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
